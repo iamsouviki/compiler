@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: sudo apt-get update && sudo apt install openjdk-21 && export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 && sudo apt
+      - run: sudo apt-get update && sudo apt install openjdk-21-jdk && export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 && sudo apt
           install maven -y && sudo apt install build-essential &&
           sudo apt install python3 && sudo mvn spring-boot:run
       - uses: FirebaseExtended/action-hosting-deploy@v0
