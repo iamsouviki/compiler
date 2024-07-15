@@ -1,7 +1,10 @@
 package app.web.souvikportfolio.compiler.controller;
 
 
+import app.web.souvikportfolio.compiler.model.CompileandTest;
 import app.web.souvikportfolio.compiler.model.CompilerModel;
+import app.web.souvikportfolio.compiler.service.CompileServices;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,63 +17,32 @@ import java.util.UUID;
 
 @RestController
 public class CompilerController {
+
+    @Autowired
+    CompileServices compileServices;
+
     @PostMapping(value = "/compile")
     @CrossOrigin(origins = "*")
     public ResponseEntity<String> compileCode(@RequestBody CompilerModel compilerModel) throws IOException {
-        String output;
-        String filename = UUID.randomUUID().toString();
-        String fileExtension;
-        String compileCommand;
-        String runCommand;
-
-        switch (compilerModel.getLanguage().toLowerCase()) {
-            case "python":
-                fileExtension = ".py";
-                compileCommand = "python";
-                runCommand = "python";
-                break;
-            case "java":
-                fileExtension = ".java";
-                compileCommand = "javac";
-                runCommand = "java";
-                break;
-            case "c":
-                fileExtension = ".c";
-                compileCommand = "gcc";
-                runCommand = "./a.out";
-                break;
-            case "cpp":
-                fileExtension = ".cpp";
-                compileCommand = "g++";
-                runCommand = "./a.out";
-                break;
-            default:
-                return new ResponseEntity<>("Unsupported language", HttpStatus.BAD_REQUEST);
+        try{
+            String output = compileServices.compileCode(compilerModel);
+            return new ResponseEntity<>(output, HttpStatus.OK);
+        }catch (Exception e){
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.OK);
         }
+    }
 
-        File tempFile = File.createTempFile(filename, fileExtension);
-        String filePath = tempFile.getAbsolutePath();
-
-        try (FileWriter fileWriter = new FileWriter(filePath)) {
-            fileWriter.write(compilerModel.getCodeText());
-        } catch (IOException e) {
-            return new ResponseEntity<>("Error writing to file ", HttpStatus.INTERNAL_SERVER_ERROR);
-        }
-
-        try {
-            Process compileProcess = Runtime.getRuntime().exec(compileCommand + " " + filePath);
-            compileProcess.waitFor();
-
-            Process runProcess = Runtime.getRuntime().exec(runCommand + " " + filePath);
-            runProcess.waitFor();
-
-            output = new String(runProcess.getInputStream().readAllBytes());
-
-        } catch (IOException | InterruptedException e) {
-            return new ResponseEntity<>("Error during compilation or execution "+e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
-        }
-        tempFile.deleteOnExit();
-
-        return new ResponseEntity<>(output, HttpStatus.OK);
+    @PostMapping(value = "/compile-and-test")
+    @CrossOrigin(origins = "*")
+    public ResponseEntity<String> compileAndTestCode(@RequestBody CompileandTest compileandTest) throws IOException {
+        CompilerModel compilerModel = new CompilerModel();
+            compilerModel.setLanguage(compileandTest.getLanguage());
+            compilerModel.setCodeText(compileandTest.getCodeText());
+            String output = compileServices.compileCode(compilerModel);
+            if(compileandTest.getExpectedOutput().equals(output)){
+                return new ResponseEntity<>("passed", HttpStatus.OK);
+            }else{
+               return new ResponseEntity<>("failed", HttpStatus.NOT_ACCEPTABLE);
+            }
     }
 }
