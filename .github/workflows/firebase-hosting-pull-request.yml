@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: sudo apt-get update && sudo apt install openjdk-17-jdk openjdk-17-jre && sudo apt
+      - run: sudo apt-get update && sudo apt install openjdk-21-jdk -y && sudo apt
           install maven -y && sudo apt install build-essential &&
           sudo apt install python3 && mvn spring-boot:run
       - uses: FirebaseExtended/action-hosting-deploy@v0
