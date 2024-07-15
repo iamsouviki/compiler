@@ -1,0 +1,12 @@
+{
+	"command": "java -jar compiler-0.0.1-SNAPSHOT.jar",
+	"build_path": "C:\\Users\\itimo\\OneDrive\\Desktop\\compiler\\target\\compiler-0.0.1-SNAPSHOT.jar",
+	"stack": "java17",
+	"env_variables": {},
+	"memory": 256,
+	"scripts": {
+		"preserve": "mvnw clean install",
+		"predeploy": "mvnw clean install"
+	},
+	"platform": "javase"
+}

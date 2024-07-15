@@ -1,0 +1,556 @@
+[debug] [2024-07-15T20:10:38.782Z] : 
+[debug] [2024-07-15T20:10:38.784Z] : ----------------------------------------------------------------------
+[debug] [2024-07-15T20:10:38.785Z] : Command:      C:\Program Files\nodejs\node.exe C:\Users\itimo\AppData\Roaming\npm\node_modules\zcatalyst-cli\lib\bin\catalyst.js deploy
+[debug] [2024-07-15T20:10:38.785Z] : CLI Version:  1.17.6
+[debug] [2024-07-15T20:10:38.785Z] : Platform:     win32
+[debug] [2024-07-15T20:10:38.785Z] : Node Version: v20.14.0
+[debug] [2024-07-15T20:10:38.785Z] : Time:         Tue Jul 16 2024 01:40:38 GMT+0530 (India Standard Time)
+[debug] [2024-07-15T20:10:38.786Z] : ----------------------------------------------------------------------
+[debug] [2024-07-15T20:10:38.786Z] : 
+[debug] [2024-07-15T20:10:39.427Z] : > authorizing via signed-in user option
+[debug] [2024-07-15T20:10:39.427Z] : > command requires scopes: ["ZohoCatalyst.projects.ALL","ZohoCatalyst.functions.ALL","ZohoCatalyst.webapp.ALL","ZohoCatalyst.appsail.Update"]
+[debug] [2024-07-15T20:10:39.439Z] : >>>> HTTP REQUEST : GET https://api.catalyst.zoho.in/baas/v1/project/7790000000008001 
+
+[debug] [2024-07-15T20:10:39.962Z] : <<<< HTTP RESPONSE : 200
+Response Headers: {"server":"ZGS","date":"Mon, 15 Jul 2024 20:10:41 GMT","content-type":"application/vnd.catalyst.v2+json","transfer-encoding":"chunked","connection":"keep-alive","set-cookie":["zalb_3a750b85f1=7c58023b2365c117e2ff9b6feb09efa2; Path=/","ZD_CSRF_TOKEN=79c0e416-8c9b-4a1f-a2bf-72bdf2b9be7b;path=/;SameSite=None;Secure;priority=high","_zcsr_tmp=79c0e416-8c9b-4a1f-a2bf-72bdf2b9be7b;path=/;SameSite=Strict;Secure;priority=high"],"x-content-type-options":"nosniff","x-xss-protection":"1","cache-control":"private,no-cache,no-store,max-age=0,must-revalidate","pragma":"no-cache","expires":"Thu, 01 Jan 1970 00:00:00 GMT","x-frame-options":"DENY","strict-transport-security":"max-age=63072000"}
+
+[debug] [2024-07-15T20:10:39.971Z] : >>>> HTTP REQUEST : GET https://api.catalyst.zoho.in/baas/v1/project/7790000000008001/environment 
+
+[debug] [2024-07-15T20:10:40.127Z] : <<<< HTTP RESPONSE : 200
+Response Headers: {"server":"ZGS","date":"Mon, 15 Jul 2024 20:10:41 GMT","content-type":"application/vnd.catalyst.v2+json","transfer-encoding":"chunked","connection":"keep-alive","set-cookie":["zalb_3a750b85f1=99131cfabfda186b4fe68a16fb8fedd6; Path=/","ZD_CSRF_TOKEN=0d187ea9-472a-4b7e-9a6a-b302d3beabc1;path=/;SameSite=None;Secure;priority=high","_zcsr_tmp=0d187ea9-472a-4b7e-9a6a-b302d3beabc1;path=/;SameSite=Strict;Secure;priority=high"],"x-content-type-options":"nosniff","x-xss-protection":"1","cache-control":"private,no-cache,no-store,max-age=0,must-revalidate","pragma":"no-cache","expires":"Thu, 01 Jan 1970 00:00:00 GMT","x-frame-options":"DENY","strict-transport-security":"max-age=63072000"}
+
+[info] [2024-07-15T20:10:40.163Z] : 
+[info] [2024-07-15T20:10:40.164Z] : Executing predeploy script in C:\Users\itimo\OneDrive\Desktop\appsail-java
+[debug] [2024-07-15T20:10:40.164Z] : Executing command > ./mvnw clean install
+[info] [2024-07-15T20:10:40.165Z] : > ./mvnw clean install
+[debug] [2024-07-15T20:10:40.243Z] : CatalystError: The script exited with code greater than 0 or an error
+    at executeCommand (C:\Users\itimo\AppData\Roaming\npm\node_modules\zcatalyst-cli\lib\execute-script.js:60:15)
+    at executeHook (C:\Users\itimo\AppData\Roaming\npm\node_modules\zcatalyst-cli\lib\deploy\features\appsail\index.js:39:41)
+    at C:\Users\itimo\AppData\Roaming\npm\node_modules\zcatalyst-cli\lib\deploy\features\appsail\index.js:186:17
+    at Generator.next (<anonymous>)
+    at fulfilled (C:\Users\itimo\AppData\Roaming\npm\node_modules\zcatalyst-cli\lib\deploy\features\appsail\index.js:5:58) {
+  status: 500,
+  exit: 1,
+  original: Error: {"status":1,"signal":null,"output":[null,null,null],"pid":16324,"stdout":null,"stderr":null,"error":{"code":"ENOENT","errno":"ENOENT","syscall":"spawnSync ./mvnw clean install","path":"./mvnw clean install","spawnargs":[]}}
+      at executeCommand (C:\Users\itimo\AppData\Roaming\npm\node_modules\zcatalyst-cli\lib\execute-script.js:62:23)
+      at executeHook (C:\Users\itimo\AppData\Roaming\npm\node_modules\zcatalyst-cli\lib\deploy\features\appsail\index.js:39:41)
+      at C:\Users\itimo\AppData\Roaming\npm\node_modules\zcatalyst-cli\lib\deploy\features\appsail\index.js:186:17
+      at Generator.next (<anonymous>)
+      at fulfilled (C:\Users\itimo\AppData\Roaming\npm\node_modules\zcatalyst-cli\lib\deploy\features\appsail\index.js:5:58),
+  context: undefined,
+  errorId: 'EXEC-SCRIPT-4',
+  arg: [
+    '\x1B[1mpredeploy\x1B[22m',
+    '\x1B[3m\x1B[31m{\x1B[39m\x1B[23m\n' +
+      '\x1B[3m\x1B[31m  "status": 1,\x1B[39m\x1B[23m\n' +
+      '\x1B[3m\x1B[31m  "signal": null,\x1B[39m\x1B[23m\n' +
+      '\x1B[3m\x1B[31m  "output": [\x1B[39m\x1B[23m\n' +
+      '\x1B[3m\x1B[31m    null,\x1B[39m\x1B[23m\n' +
+      '\x1B[3m\x1B[31m    null,\x1B[39m\x1B[23m\n' +
+      '\x1B[3m\x1B[31m    null\x1B[39m\x1B[23m\n' +
+      '\x1B[3m\x1B[31m  ],\x1B[39m\x1B[23m\n' +
+      '\x1B[3m\x1B[31m  "pid": 16324,\x1B[39m\x1B[23m\n' +
+      '\x1B[3m\x1B[31m  "stdout": null,\x1B[39m\x1B[23m\n' +
+      '\x1B[3m\x1B[31m  "stderr": null,\x1B[39m\x1B[23m\n' +
+      '\x1B[3m\x1B[31m  "error": {\x1B[39m\x1B[23m\n' +
+      '\x1B[3m\x1B[31m    "code": "ENOENT",\x1B[39m\x1B[23m\n' +
+      '\x1B[3m\x1B[31m    "errno": "ENOENT",\x1B[39m\x1B[23m\n' +
+      '\x1B[3m\x1B[31m    "syscall": "spawnSync ./mvnw clean install",\x1B[39m\x1B[23m\n' +
+      '\x1B[3m\x1B[31m    "path": "./mvnw clean install",\x1B[39m\x1B[23m\n' +
+      '\x1B[3m\x1B[31m    "spawnargs": []\x1B[39m\x1B[23m\n' +
+      '\x1B[3m\x1B[31m  }\x1B[39m\x1B[23m\n' +
+      '\x1B[3m\x1B[31m}\x1B[39m\x1B[23m'
+  ],
+  skipHelp: false,
+  fileName: 'C:\\Users\\itimo\\AppData\\Roaming\\npm\\node_modules\\zcatalyst-cli\\lib\\execute-script'
+}
+[info] [2024-07-15T20:10:40.244Z] : 
+[info] [2024-07-15T20:10:40.245Z] : Executing predeploy script in C:\Users\itimo\OneDrive\Desktop\compiler
+[debug] [2024-07-15T20:10:40.245Z] : Executing command > ./mvnw clean install
+[info] [2024-07-15T20:10:40.245Z] : > ./mvnw clean install
+[debug] [2024-07-15T20:10:40.276Z] : CatalystError: The script exited with code greater than 0 or an error
+    at executeCommand (C:\Users\itimo\AppData\Roaming\npm\node_modules\zcatalyst-cli\lib\execute-script.js:60:15)
+    at executeHook (C:\Users\itimo\AppData\Roaming\npm\node_modules\zcatalyst-cli\lib\deploy\features\appsail\index.js:39:41)
+    at C:\Users\itimo\AppData\Roaming\npm\node_modules\zcatalyst-cli\lib\deploy\features\appsail\index.js:186:17
+    at Generator.next (<anonymous>)
+    at fulfilled (C:\Users\itimo\AppData\Roaming\npm\node_modules\zcatalyst-cli\lib\deploy\features\appsail\index.js:5:58) {
+  status: 500,
+  exit: 1,
+  original: Error: {"status":1,"signal":null,"output":[null,null,null],"pid":13856,"stdout":null,"stderr":null,"error":{"code":"ENOENT","errno":"ENOENT","syscall":"spawnSync ./mvnw clean install","path":"./mvnw clean install","spawnargs":[]}}
+      at executeCommand (C:\Users\itimo\AppData\Roaming\npm\node_modules\zcatalyst-cli\lib\execute-script.js:62:23)
+      at executeHook (C:\Users\itimo\AppData\Roaming\npm\node_modules\zcatalyst-cli\lib\deploy\features\appsail\index.js:39:41)
+      at C:\Users\itimo\AppData\Roaming\npm\node_modules\zcatalyst-cli\lib\deploy\features\appsail\index.js:186:17
+      at Generator.next (<anonymous>)
+      at fulfilled (C:\Users\itimo\AppData\Roaming\npm\node_modules\zcatalyst-cli\lib\deploy\features\appsail\index.js:5:58),
+  context: undefined,
+  errorId: 'EXEC-SCRIPT-4',
+  arg: [
+    '\x1B[1mpredeploy\x1B[22m',
+    '\x1B[3m\x1B[31m{\x1B[39m\x1B[23m\n' +
+      '\x1B[3m\x1B[31m  "status": 1,\x1B[39m\x1B[23m\n' +
+      '\x1B[3m\x1B[31m  "signal": null,\x1B[39m\x1B[23m\n' +
+      '\x1B[3m\x1B[31m  "output": [\x1B[39m\x1B[23m\n' +
+      '\x1B[3m\x1B[31m    null,\x1B[39m\x1B[23m\n' +
+      '\x1B[3m\x1B[31m    null,\x1B[39m\x1B[23m\n' +
+      '\x1B[3m\x1B[31m    null\x1B[39m\x1B[23m\n' +
+      '\x1B[3m\x1B[31m  ],\x1B[39m\x1B[23m\n' +
+      '\x1B[3m\x1B[31m  "pid": 13856,\x1B[39m\x1B[23m\n' +
+      '\x1B[3m\x1B[31m  "stdout": null,\x1B[39m\x1B[23m\n' +
+      '\x1B[3m\x1B[31m  "stderr": null,\x1B[39m\x1B[23m\n' +
+      '\x1B[3m\x1B[31m  "error": {\x1B[39m\x1B[23m\n' +
+      '\x1B[3m\x1B[31m    "code": "ENOENT",\x1B[39m\x1B[23m\n' +
+      '\x1B[3m\x1B[31m    "errno": "ENOENT",\x1B[39m\x1B[23m\n' +
+      '\x1B[3m\x1B[31m    "syscall": "spawnSync ./mvnw clean install",\x1B[39m\x1B[23m\n' +
+      '\x1B[3m\x1B[31m    "path": "./mvnw clean install",\x1B[39m\x1B[23m\n' +
+      '\x1B[3m\x1B[31m    "spawnargs": []\x1B[39m\x1B[23m\n' +
+      '\x1B[3m\x1B[31m  }\x1B[39m\x1B[23m\n' +
+      '\x1B[3m\x1B[31m}\x1B[39m\x1B[23m'
+  ],
+  skipHelp: false,
+  fileName: 'C:\\Users\\itimo\\AppData\\Roaming\\npm\\node_modules\\zcatalyst-cli\\lib\\execute-script'
+}
+[warn] [2024-07-15T20:10:40.278Z] : ‼ Deploy of AppSail [AppSail] was unsuccessful since The script exited with code greater than 0 or an error
+[warn] [2024-07-15T20:10:40.279Z] : ‼ Deploy of AppSail [compiler] was unsuccessful since The script exited with code greater than 0 or an error
+[info] [2024-07-15T20:10:40.280Z] : 
+[error] [2024-07-15T20:10:40.282Z] : × appsail: deploy skipped
+[info] [2024-07-15T20:10:40.282Z] : 
+[error] [2024-07-15T20:10:40.283Z] : × No components deployed!
+[info] [2024-07-15T20:10:40.309Z] : 
+[error] [2024-07-15T20:10:40.310Z] : × Error: The script predeploy exited with the exit code greater than 0 or with an error.
+[debug] [2024-07-15T20:10:40.311Z] : Error Stack: CatalystError: The script exited with code greater than 0 or an error
+    at executeCommand (C:\Users\itimo\AppData\Roaming\npm\node_modules\zcatalyst-cli\lib\execute-script.js:60:15)
+    at executeHook (C:\Users\itimo\AppData\Roaming\npm\node_modules\zcatalyst-cli\lib\deploy\features\appsail\index.js:39:41)
+    at C:\Users\itimo\AppData\Roaming\npm\node_modules\zcatalyst-cli\lib\deploy\features\appsail\index.js:186:17
+    at Generator.next (<anonymous>)
+    at fulfilled (C:\Users\itimo\AppData\Roaming\npm\node_modules\zcatalyst-cli\lib\deploy\features\appsail\index.js:5:58)
+[debug] [2024-07-15T20:10:40.311Z] : Original Error: Error: {"status":1,"signal":null,"output":[null,null,null],"pid":16324,"stdout":null,"stderr":null,"error":{"code":"ENOENT","errno":"ENOENT","syscall":"spawnSync ./mvnw clean install","path":"./mvnw clean install","spawnargs":[]}}
+    at executeCommand (C:\Users\itimo\AppData\Roaming\npm\node_modules\zcatalyst-cli\lib\execute-script.js:62:23)
+    at executeHook (C:\Users\itimo\AppData\Roaming\npm\node_modules\zcatalyst-cli\lib\deploy\features\appsail\index.js:39:41)
+    at C:\Users\itimo\AppData\Roaming\npm\node_modules\zcatalyst-cli\lib\deploy\features\appsail\index.js:186:17
+    at Generator.next (<anonymous>)
+    at fulfilled (C:\Users\itimo\AppData\Roaming\npm\node_modules\zcatalyst-cli\lib\deploy\features\appsail\index.js:5:58)
+[debug] [2024-07-15T20:10:40.311Z] : Error Status: 500
+[info] [2024-07-15T20:10:40.312Z] : 
+[error] [2024-07-15T20:10:40.313Z] : Execution Info: 
+{
+  "status": 1,
+  "signal": null,
+  "output": [
+    null,
+    null,
+    null
+  ],
+  "pid": 16324,
+  "stdout": null,
+  "stderr": null,
+  "error": {
+    "code": "ENOENT",
+    "errno": "ENOENT",
+    "syscall": "spawnSync ./mvnw clean install",
+    "path": "./mvnw clean install",
+    "spawnargs": []
+  }
+}
+[info] [2024-07-15T20:10:40.314Z] : 
+[error] [2024-07-15T20:10:40.315Z] : REF: https://www.zoho.com/catalyst/help/scripts.html#Run
+[debug] [2024-07-15T20:10:40.317Z] : EXEC ENDED with event: deploy, message: success
+[debug] [2024-07-15T20:10:40.317Z] : TOTAL DURATION OF COMMAND EXEC : 869
+[debug] [2024-07-15T20:10:40.342Z] : >>>> HTTP REQUEST : POST https://api.catalyst.zoho.in/baas/v1/cli/logs 
+<request body omitted>
+
+[debug] [2024-07-15T20:10:40.570Z] : <<<< HTTP RESPONSE : 400
+Response Headers: {"server":"ZGS","date":"Mon, 15 Jul 2024 20:10:41 GMT","content-type":"application/json;charset=ISO-8859-1","content-length":"147","connection":"keep-alive","set-cookie":["zalb_3a750b85f1=7c58023b2365c117e2ff9b6feb09efa2; Path=/","ZD_CSRF_TOKEN=0b503f96-5b36-4db2-9ef0-ae8c15ba12b0;path=/;SameSite=None;Secure;priority=high","_zcsr_tmp=0b503f96-5b36-4db2-9ef0-ae8c15ba12b0;path=/;SameSite=Strict;Secure;priority=high","JSESSIONID=4BCDB33004C9D63C525B4F65AA2D0EC3; Path=/; Secure; HttpOnly"],"x-content-type-options":"nosniff","x-xss-protection":"1","x-frame-options":"DENY","strict-transport-security":"max-age=63072000"}
+
+[debug] [2024-07-15T20:10:40.571Z] : Response Body : {"status":"failure","data":{"error_code":"INPUT_SIZE_MORE_THAN_ALLOWED","message":"Please check if the size of the input is in the correct range"}}
+
+[debug] [2024-07-15T20:10:40.577Z] : Unable to send debug log to server: HTTP Error: 400, Please check if the size of the input is in the correct range
+[debug] [2024-07-15T20:11:26.103Z] : 
+[debug] [2024-07-15T20:11:26.105Z] : ----------------------------------------------------------------------
+[debug] [2024-07-15T20:11:26.106Z] : Command:      C:\Program Files\nodejs\node.exe C:\Users\itimo\AppData\Roaming\npm\node_modules\zcatalyst-cli\lib\bin\catalyst.js deploy
+[debug] [2024-07-15T20:11:26.106Z] : CLI Version:  1.17.6
+[debug] [2024-07-15T20:11:26.107Z] : Platform:     win32
+[debug] [2024-07-15T20:11:26.108Z] : Node Version: v20.14.0
+[debug] [2024-07-15T20:11:26.108Z] : Time:         Tue Jul 16 2024 01:41:26 GMT+0530 (India Standard Time)
+[debug] [2024-07-15T20:11:26.108Z] : ----------------------------------------------------------------------
+[debug] [2024-07-15T20:11:26.108Z] : 
+[debug] [2024-07-15T20:11:26.753Z] : > authorizing via signed-in user option
+[debug] [2024-07-15T20:11:26.753Z] : > command requires scopes: ["ZohoCatalyst.projects.ALL","ZohoCatalyst.functions.ALL","ZohoCatalyst.webapp.ALL","ZohoCatalyst.appsail.Update"]
+[debug] [2024-07-15T20:11:26.764Z] : >>>> HTTP REQUEST : GET https://api.catalyst.zoho.in/baas/v1/project/7790000000008001 
+
+[debug] [2024-07-15T20:11:27.169Z] : <<<< HTTP RESPONSE : 200
+Response Headers: {"server":"ZGS","date":"Mon, 15 Jul 2024 20:11:28 GMT","content-type":"application/vnd.catalyst.v2+json","transfer-encoding":"chunked","connection":"keep-alive","set-cookie":["zalb_3a750b85f1=7c58023b2365c117e2ff9b6feb09efa2; Path=/","ZD_CSRF_TOKEN=c4d83f4c-613b-4df0-a47b-6f05b5115e2a;path=/;SameSite=None;Secure;priority=high","_zcsr_tmp=c4d83f4c-613b-4df0-a47b-6f05b5115e2a;path=/;SameSite=Strict;Secure;priority=high"],"x-content-type-options":"nosniff","x-xss-protection":"1","cache-control":"private,no-cache,no-store,max-age=0,must-revalidate","pragma":"no-cache","expires":"Thu, 01 Jan 1970 00:00:00 GMT","x-frame-options":"DENY","strict-transport-security":"max-age=63072000"}
+
+[debug] [2024-07-15T20:11:27.176Z] : >>>> HTTP REQUEST : GET https://api.catalyst.zoho.in/baas/v1/project/7790000000008001/environment 
+
+[debug] [2024-07-15T20:11:27.264Z] : <<<< HTTP RESPONSE : 200
+Response Headers: {"server":"ZGS","date":"Mon, 15 Jul 2024 20:11:28 GMT","content-type":"application/vnd.catalyst.v2+json","transfer-encoding":"chunked","connection":"keep-alive","set-cookie":["zalb_3a750b85f1=99131cfabfda186b4fe68a16fb8fedd6; Path=/","ZD_CSRF_TOKEN=94f11dbc-f86e-4f21-9f05-eb9a78b72f35;path=/;SameSite=None;Secure;priority=high","_zcsr_tmp=94f11dbc-f86e-4f21-9f05-eb9a78b72f35;path=/;SameSite=Strict;Secure;priority=high"],"x-content-type-options":"nosniff","x-xss-protection":"1","cache-control":"private,no-cache,no-store,max-age=0,must-revalidate","pragma":"no-cache","expires":"Thu, 01 Jan 1970 00:00:00 GMT","x-frame-options":"DENY","strict-transport-security":"max-age=63072000"}
+
+[info] [2024-07-15T20:11:27.286Z] : 
+[info] [2024-07-15T20:11:27.287Z] : Executing predeploy script in C:\Users\itimo\OneDrive\Desktop\appsail-java
+[debug] [2024-07-15T20:11:27.287Z] : Executing command > ./mvnw clean install
+[info] [2024-07-15T20:11:27.289Z] : > ./mvnw clean install
+[debug] [2024-07-15T20:11:27.317Z] : CatalystError: The script exited with code greater than 0 or an error
+    at executeCommand (C:\Users\itimo\AppData\Roaming\npm\node_modules\zcatalyst-cli\lib\execute-script.js:60:15)
+    at executeHook (C:\Users\itimo\AppData\Roaming\npm\node_modules\zcatalyst-cli\lib\deploy\features\appsail\index.js:39:41)
+    at C:\Users\itimo\AppData\Roaming\npm\node_modules\zcatalyst-cli\lib\deploy\features\appsail\index.js:186:17
+    at Generator.next (<anonymous>)
+    at fulfilled (C:\Users\itimo\AppData\Roaming\npm\node_modules\zcatalyst-cli\lib\deploy\features\appsail\index.js:5:58) {
+  status: 500,
+  exit: 1,
+  original: Error: {"status":1,"signal":null,"output":[null,null,null],"pid":6464,"stdout":null,"stderr":null,"error":{"code":"ENOENT","errno":"ENOENT","syscall":"spawnSync ./mvnw clean install","path":"./mvnw clean install","spawnargs":[]}}
+      at executeCommand (C:\Users\itimo\AppData\Roaming\npm\node_modules\zcatalyst-cli\lib\execute-script.js:62:23)
+      at executeHook (C:\Users\itimo\AppData\Roaming\npm\node_modules\zcatalyst-cli\lib\deploy\features\appsail\index.js:39:41)
+      at C:\Users\itimo\AppData\Roaming\npm\node_modules\zcatalyst-cli\lib\deploy\features\appsail\index.js:186:17
+      at Generator.next (<anonymous>)
+      at fulfilled (C:\Users\itimo\AppData\Roaming\npm\node_modules\zcatalyst-cli\lib\deploy\features\appsail\index.js:5:58),
+  context: undefined,
+  errorId: 'EXEC-SCRIPT-4',
+  arg: [
+    '\x1B[1mpredeploy\x1B[22m',
+    '\x1B[3m\x1B[31m{\x1B[39m\x1B[23m\n' +
+      '\x1B[3m\x1B[31m  "status": 1,\x1B[39m\x1B[23m\n' +
+      '\x1B[3m\x1B[31m  "signal": null,\x1B[39m\x1B[23m\n' +
+      '\x1B[3m\x1B[31m  "output": [\x1B[39m\x1B[23m\n' +
+      '\x1B[3m\x1B[31m    null,\x1B[39m\x1B[23m\n' +
+      '\x1B[3m\x1B[31m    null,\x1B[39m\x1B[23m\n' +
+      '\x1B[3m\x1B[31m    null\x1B[39m\x1B[23m\n' +
+      '\x1B[3m\x1B[31m  ],\x1B[39m\x1B[23m\n' +
+      '\x1B[3m\x1B[31m  "pid": 6464,\x1B[39m\x1B[23m\n' +
+      '\x1B[3m\x1B[31m  "stdout": null,\x1B[39m\x1B[23m\n' +
+      '\x1B[3m\x1B[31m  "stderr": null,\x1B[39m\x1B[23m\n' +
+      '\x1B[3m\x1B[31m  "error": {\x1B[39m\x1B[23m\n' +
+      '\x1B[3m\x1B[31m    "code": "ENOENT",\x1B[39m\x1B[23m\n' +
+      '\x1B[3m\x1B[31m    "errno": "ENOENT",\x1B[39m\x1B[23m\n' +
+      '\x1B[3m\x1B[31m    "syscall": "spawnSync ./mvnw clean install",\x1B[39m\x1B[23m\n' +
+      '\x1B[3m\x1B[31m    "path": "./mvnw clean install",\x1B[39m\x1B[23m\n' +
+      '\x1B[3m\x1B[31m    "spawnargs": []\x1B[39m\x1B[23m\n' +
+      '\x1B[3m\x1B[31m  }\x1B[39m\x1B[23m\n' +
+      '\x1B[3m\x1B[31m}\x1B[39m\x1B[23m'
+  ],
+  skipHelp: false,
+  fileName: 'C:\\Users\\itimo\\AppData\\Roaming\\npm\\node_modules\\zcatalyst-cli\\lib\\execute-script'
+}
+[info] [2024-07-15T20:11:27.318Z] : 
+[info] [2024-07-15T20:11:27.318Z] : Executing predeploy script in C:\Users\itimo\OneDrive\Desktop\compiler
+[debug] [2024-07-15T20:11:27.318Z] : Executing command > mvnw clean install
+[info] [2024-07-15T20:11:27.318Z] : > mvnw clean install
+[debug] [2024-07-15T20:11:43.419Z] : >>>> HTTP REQUEST : PUT https://api.catalyst.zoho.in/baas/v1/project/7790000000008001/appsail/upsert 
+
+[debug] [2024-07-15T20:12:50.315Z] : <<<< HTTP RESPONSE : 200
+Response Headers: {"server":"ZGS","date":"Mon, 15 Jul 2024 20:12:51 GMT","content-type":"application/vnd.catalyst.v2+json","transfer-encoding":"chunked","connection":"keep-alive","set-cookie":["zalb_3a750b85f1=99131cfabfda186b4fe68a16fb8fedd6; Path=/","ZD_CSRF_TOKEN=a2c9ea4e-60f6-4849-8a08-fb9c5f6372ec;path=/;SameSite=None;Secure;priority=high","_zcsr_tmp=a2c9ea4e-60f6-4849-8a08-fb9c5f6372ec;path=/;SameSite=Strict;Secure;priority=high"],"x-content-type-options":"nosniff","x-xss-protection":"1","cache-control":"private,no-cache,no-store,max-age=0,must-revalidate","pragma":"no-cache","expires":"Thu, 01 Jan 1970 00:00:00 GMT","x-frame-options":"DENY","strict-transport-security":"max-age=63072000"}
+
+[warn] [2024-07-15T20:12:50.323Z] : ‼ Deploy of AppSail [AppSail] was unsuccessful since The script exited with code greater than 0 or an error
+[info] [2024-07-15T20:12:50.325Z] : 
+[info] [2024-07-15T20:12:50.327Z] : i AppSail(compiler): URL => https://compiler-50021380630.development.catalystappsail.in
+[info] [2024-07-15T20:12:50.327Z] : √ AppSail(compiler): deploy successful
+[info] [2024-07-15T20:12:50.328Z] : 
+[info] [2024-07-15T20:12:50.329Z] : √ Catalyst deploy complete!
+[info] [2024-07-15T20:12:50.345Z] : 
+[error] [2024-07-15T20:12:50.346Z] : × Error: The script predeploy exited with the exit code greater than 0 or with an error.
+[debug] [2024-07-15T20:12:50.347Z] : Error Stack: CatalystError: The script exited with code greater than 0 or an error
+    at executeCommand (C:\Users\itimo\AppData\Roaming\npm\node_modules\zcatalyst-cli\lib\execute-script.js:60:15)
+    at executeHook (C:\Users\itimo\AppData\Roaming\npm\node_modules\zcatalyst-cli\lib\deploy\features\appsail\index.js:39:41)
+    at C:\Users\itimo\AppData\Roaming\npm\node_modules\zcatalyst-cli\lib\deploy\features\appsail\index.js:186:17
+    at Generator.next (<anonymous>)
+    at fulfilled (C:\Users\itimo\AppData\Roaming\npm\node_modules\zcatalyst-cli\lib\deploy\features\appsail\index.js:5:58)
+[debug] [2024-07-15T20:12:50.347Z] : Original Error: Error: {"status":1,"signal":null,"output":[null,null,null],"pid":6464,"stdout":null,"stderr":null,"error":{"code":"ENOENT","errno":"ENOENT","syscall":"spawnSync ./mvnw clean install","path":"./mvnw clean install","spawnargs":[]}}
+    at executeCommand (C:\Users\itimo\AppData\Roaming\npm\node_modules\zcatalyst-cli\lib\execute-script.js:62:23)
+    at executeHook (C:\Users\itimo\AppData\Roaming\npm\node_modules\zcatalyst-cli\lib\deploy\features\appsail\index.js:39:41)
+    at C:\Users\itimo\AppData\Roaming\npm\node_modules\zcatalyst-cli\lib\deploy\features\appsail\index.js:186:17
+    at Generator.next (<anonymous>)
+    at fulfilled (C:\Users\itimo\AppData\Roaming\npm\node_modules\zcatalyst-cli\lib\deploy\features\appsail\index.js:5:58)
+[debug] [2024-07-15T20:12:50.347Z] : Error Status: 500
+[info] [2024-07-15T20:12:50.347Z] : 
+[error] [2024-07-15T20:12:50.350Z] : Execution Info: 
+{
+  "status": 1,
+  "signal": null,
+  "output": [
+    null,
+    null,
+    null
+  ],
+  "pid": 6464,
+  "stdout": null,
+  "stderr": null,
+  "error": {
+    "code": "ENOENT",
+    "errno": "ENOENT",
+    "syscall": "spawnSync ./mvnw clean install",
+    "path": "./mvnw clean install",
+    "spawnargs": []
+  }
+}
+[info] [2024-07-15T20:12:50.350Z] : 
+[error] [2024-07-15T20:12:50.351Z] : REF: https://www.zoho.com/catalyst/help/scripts.html#Run
+[debug] [2024-07-15T20:12:50.352Z] : EXEC ENDED with event: deploy, message: success
+[debug] [2024-07-15T20:12:50.353Z] : TOTAL DURATION OF COMMAND EXEC : 83588
+[debug] [2024-07-15T20:12:50.381Z] : >>>> HTTP REQUEST : POST https://api.catalyst.zoho.in/baas/v1/cli/logs 
+<request body omitted>
+
+[debug] [2024-07-15T20:12:50.507Z] : <<<< HTTP RESPONSE : 400
+Response Headers: {"server":"ZGS","date":"Mon, 15 Jul 2024 20:12:51 GMT","content-type":"application/json;charset=ISO-8859-1","content-length":"147","connection":"keep-alive","set-cookie":["zalb_3a750b85f1=7c58023b2365c117e2ff9b6feb09efa2; Path=/","ZD_CSRF_TOKEN=15a5f9f2-55b2-4b01-8294-61a5dcc3d965;path=/;SameSite=None;Secure;priority=high","_zcsr_tmp=15a5f9f2-55b2-4b01-8294-61a5dcc3d965;path=/;SameSite=Strict;Secure;priority=high","JSESSIONID=45FBB4F4459B1594576B861CBB098A4B; Path=/; Secure; HttpOnly"],"x-content-type-options":"nosniff","x-xss-protection":"1","x-frame-options":"DENY","strict-transport-security":"max-age=63072000"}
+
+[debug] [2024-07-15T20:12:50.509Z] : Response Body : {"status":"failure","data":{"error_code":"INPUT_SIZE_MORE_THAN_ALLOWED","message":"Please check if the size of the input is in the correct range"}}
+
+[debug] [2024-07-15T20:12:50.512Z] : Unable to send debug log to server: HTTP Error: 400, Please check if the size of the input is in the correct range
+[debug] [2024-07-15T20:14:40.668Z] : 
+[debug] [2024-07-15T20:14:40.672Z] : ----------------------------------------------------------------------
+[debug] [2024-07-15T20:14:40.672Z] : Command:      C:\Program Files\nodejs\node.exe C:\Users\itimo\AppData\Roaming\npm\node_modules\zcatalyst-cli\lib\bin\catalyst.js deploy
+[debug] [2024-07-15T20:14:40.673Z] : CLI Version:  1.17.6
+[debug] [2024-07-15T20:14:40.675Z] : Platform:     win32
+[debug] [2024-07-15T20:14:40.675Z] : Node Version: v20.14.0
+[debug] [2024-07-15T20:14:40.676Z] : Time:         Tue Jul 16 2024 01:44:40 GMT+0530 (India Standard Time)
+[debug] [2024-07-15T20:14:40.676Z] : ----------------------------------------------------------------------
+[debug] [2024-07-15T20:14:40.676Z] : 
+[debug] [2024-07-15T20:14:41.480Z] : > authorizing via signed-in user option
+[debug] [2024-07-15T20:14:41.480Z] : > command requires scopes: ["ZohoCatalyst.projects.ALL","ZohoCatalyst.functions.ALL","ZohoCatalyst.webapp.ALL","ZohoCatalyst.appsail.Update"]
+[debug] [2024-07-15T20:14:41.495Z] : >>>> HTTP REQUEST : GET https://api.catalyst.zoho.in/baas/v1/project/7790000000008001 
+
+[debug] [2024-07-15T20:14:41.830Z] : <<<< HTTP RESPONSE : 200
+Response Headers: {"server":"ZGS","date":"Mon, 15 Jul 2024 20:14:43 GMT","content-type":"application/vnd.catalyst.v2+json","transfer-encoding":"chunked","connection":"keep-alive","set-cookie":["zalb_3a750b85f1=7c58023b2365c117e2ff9b6feb09efa2; Path=/","ZD_CSRF_TOKEN=e780fa49-ca27-4dd3-9b88-2c0feab4b02f;path=/;SameSite=None;Secure;priority=high","_zcsr_tmp=e780fa49-ca27-4dd3-9b88-2c0feab4b02f;path=/;SameSite=Strict;Secure;priority=high"],"x-content-type-options":"nosniff","x-xss-protection":"1","cache-control":"private,no-cache,no-store,max-age=0,must-revalidate","pragma":"no-cache","expires":"Thu, 01 Jan 1970 00:00:00 GMT","x-frame-options":"DENY","strict-transport-security":"max-age=63072000"}
+
+[debug] [2024-07-15T20:14:41.839Z] : >>>> HTTP REQUEST : GET https://api.catalyst.zoho.in/baas/v1/project/7790000000008001/environment 
+
+[debug] [2024-07-15T20:14:42.029Z] : <<<< HTTP RESPONSE : 200
+Response Headers: {"server":"ZGS","date":"Mon, 15 Jul 2024 20:14:43 GMT","content-type":"application/vnd.catalyst.v2+json","transfer-encoding":"chunked","connection":"keep-alive","set-cookie":["zalb_3a750b85f1=99131cfabfda186b4fe68a16fb8fedd6; Path=/","ZD_CSRF_TOKEN=46638a4c-c15c-4aad-a2c4-576a3f3ae856;path=/;SameSite=None;Secure;priority=high","_zcsr_tmp=46638a4c-c15c-4aad-a2c4-576a3f3ae856;path=/;SameSite=Strict;Secure;priority=high"],"x-content-type-options":"nosniff","x-xss-protection":"1","cache-control":"private,no-cache,no-store,max-age=0,must-revalidate","pragma":"no-cache","expires":"Thu, 01 Jan 1970 00:00:00 GMT","x-frame-options":"DENY","strict-transport-security":"max-age=63072000"}
+
+[info] [2024-07-15T20:14:42.060Z] : 
+[info] [2024-07-15T20:14:42.061Z] : Executing predeploy script in C:\Users\itimo\OneDrive\Desktop\appsail-java
+[debug] [2024-07-15T20:14:42.061Z] : Executing command > ./mvnw clean install
+[info] [2024-07-15T20:14:42.062Z] : > ./mvnw clean install
+[debug] [2024-07-15T20:14:42.115Z] : CatalystError: The script exited with code greater than 0 or an error
+    at executeCommand (C:\Users\itimo\AppData\Roaming\npm\node_modules\zcatalyst-cli\lib\execute-script.js:60:15)
+    at executeHook (C:\Users\itimo\AppData\Roaming\npm\node_modules\zcatalyst-cli\lib\deploy\features\appsail\index.js:39:41)
+    at C:\Users\itimo\AppData\Roaming\npm\node_modules\zcatalyst-cli\lib\deploy\features\appsail\index.js:186:17
+    at Generator.next (<anonymous>)
+    at fulfilled (C:\Users\itimo\AppData\Roaming\npm\node_modules\zcatalyst-cli\lib\deploy\features\appsail\index.js:5:58) {
+  status: 500,
+  exit: 1,
+  original: Error: {"status":1,"signal":null,"output":[null,null,null],"pid":1480,"stdout":null,"stderr":null,"error":{"code":"ENOENT","errno":"ENOENT","syscall":"spawnSync ./mvnw clean install","path":"./mvnw clean install","spawnargs":[]}}
+      at executeCommand (C:\Users\itimo\AppData\Roaming\npm\node_modules\zcatalyst-cli\lib\execute-script.js:62:23)
+      at executeHook (C:\Users\itimo\AppData\Roaming\npm\node_modules\zcatalyst-cli\lib\deploy\features\appsail\index.js:39:41)
+      at C:\Users\itimo\AppData\Roaming\npm\node_modules\zcatalyst-cli\lib\deploy\features\appsail\index.js:186:17
+      at Generator.next (<anonymous>)
+      at fulfilled (C:\Users\itimo\AppData\Roaming\npm\node_modules\zcatalyst-cli\lib\deploy\features\appsail\index.js:5:58),
+  context: undefined,
+  errorId: 'EXEC-SCRIPT-4',
+  arg: [
+    '\x1B[1mpredeploy\x1B[22m',
+    '\x1B[3m\x1B[31m{\x1B[39m\x1B[23m\n' +
+      '\x1B[3m\x1B[31m  "status": 1,\x1B[39m\x1B[23m\n' +
+      '\x1B[3m\x1B[31m  "signal": null,\x1B[39m\x1B[23m\n' +
+      '\x1B[3m\x1B[31m  "output": [\x1B[39m\x1B[23m\n' +
+      '\x1B[3m\x1B[31m    null,\x1B[39m\x1B[23m\n' +
+      '\x1B[3m\x1B[31m    null,\x1B[39m\x1B[23m\n' +
+      '\x1B[3m\x1B[31m    null\x1B[39m\x1B[23m\n' +
+      '\x1B[3m\x1B[31m  ],\x1B[39m\x1B[23m\n' +
+      '\x1B[3m\x1B[31m  "pid": 1480,\x1B[39m\x1B[23m\n' +
+      '\x1B[3m\x1B[31m  "stdout": null,\x1B[39m\x1B[23m\n' +
+      '\x1B[3m\x1B[31m  "stderr": null,\x1B[39m\x1B[23m\n' +
+      '\x1B[3m\x1B[31m  "error": {\x1B[39m\x1B[23m\n' +
+      '\x1B[3m\x1B[31m    "code": "ENOENT",\x1B[39m\x1B[23m\n' +
+      '\x1B[3m\x1B[31m    "errno": "ENOENT",\x1B[39m\x1B[23m\n' +
+      '\x1B[3m\x1B[31m    "syscall": "spawnSync ./mvnw clean install",\x1B[39m\x1B[23m\n' +
+      '\x1B[3m\x1B[31m    "path": "./mvnw clean install",\x1B[39m\x1B[23m\n' +
+      '\x1B[3m\x1B[31m    "spawnargs": []\x1B[39m\x1B[23m\n' +
+      '\x1B[3m\x1B[31m  }\x1B[39m\x1B[23m\n' +
+      '\x1B[3m\x1B[31m}\x1B[39m\x1B[23m'
+  ],
+  skipHelp: false,
+  fileName: 'C:\\Users\\itimo\\AppData\\Roaming\\npm\\node_modules\\zcatalyst-cli\\lib\\execute-script'
+}
+[info] [2024-07-15T20:14:42.115Z] : 
+[info] [2024-07-15T20:14:42.116Z] : Executing predeploy script in C:\Users\itimo\OneDrive\Desktop\compiler
+[debug] [2024-07-15T20:14:42.116Z] : Executing command > mvnw clean install
+[info] [2024-07-15T20:14:42.117Z] : > mvnw clean install
+[debug] [2024-07-15T20:14:54.910Z] : >>>> HTTP REQUEST : PUT https://api.catalyst.zoho.in/baas/v1/project/7790000000008001/appsail/upsert 
+
+[debug] [2024-07-15T20:15:56.886Z] : <<<< HTTP RESPONSE : 200
+Response Headers: {"server":"ZGS","date":"Mon, 15 Jul 2024 20:15:58 GMT","content-type":"application/vnd.catalyst.v2+json","transfer-encoding":"chunked","connection":"keep-alive","set-cookie":["zalb_3a750b85f1=99131cfabfda186b4fe68a16fb8fedd6; Path=/","ZD_CSRF_TOKEN=a52fa26c-4755-4158-9ff1-e97cb5df4a01;path=/;SameSite=None;Secure;priority=high","_zcsr_tmp=a52fa26c-4755-4158-9ff1-e97cb5df4a01;path=/;SameSite=Strict;Secure;priority=high"],"x-content-type-options":"nosniff","x-xss-protection":"1","cache-control":"private,no-cache,no-store,max-age=0,must-revalidate","pragma":"no-cache","expires":"Thu, 01 Jan 1970 00:00:00 GMT","x-frame-options":"DENY","strict-transport-security":"max-age=63072000"}
+
+[warn] [2024-07-15T20:15:56.894Z] : ‼ Deploy of AppSail [AppSail] was unsuccessful since The script exited with code greater than 0 or an error
+[info] [2024-07-15T20:15:56.895Z] : 
+[info] [2024-07-15T20:15:56.896Z] : i AppSail(compiler): URL => https://compiler-50021380630.development.catalystappsail.in
+[info] [2024-07-15T20:15:56.897Z] : √ AppSail(compiler): deploy successful
+[info] [2024-07-15T20:15:56.897Z] : 
+[info] [2024-07-15T20:15:56.898Z] : √ Catalyst deploy complete!
+[info] [2024-07-15T20:15:56.915Z] : 
+[error] [2024-07-15T20:15:56.916Z] : × Error: The script predeploy exited with the exit code greater than 0 or with an error.
+[debug] [2024-07-15T20:15:56.917Z] : Error Stack: CatalystError: The script exited with code greater than 0 or an error
+    at executeCommand (C:\Users\itimo\AppData\Roaming\npm\node_modules\zcatalyst-cli\lib\execute-script.js:60:15)
+    at executeHook (C:\Users\itimo\AppData\Roaming\npm\node_modules\zcatalyst-cli\lib\deploy\features\appsail\index.js:39:41)
+    at C:\Users\itimo\AppData\Roaming\npm\node_modules\zcatalyst-cli\lib\deploy\features\appsail\index.js:186:17
+    at Generator.next (<anonymous>)
+    at fulfilled (C:\Users\itimo\AppData\Roaming\npm\node_modules\zcatalyst-cli\lib\deploy\features\appsail\index.js:5:58)
+[debug] [2024-07-15T20:15:56.917Z] : Original Error: Error: {"status":1,"signal":null,"output":[null,null,null],"pid":1480,"stdout":null,"stderr":null,"error":{"code":"ENOENT","errno":"ENOENT","syscall":"spawnSync ./mvnw clean install","path":"./mvnw clean install","spawnargs":[]}}
+    at executeCommand (C:\Users\itimo\AppData\Roaming\npm\node_modules\zcatalyst-cli\lib\execute-script.js:62:23)
+    at executeHook (C:\Users\itimo\AppData\Roaming\npm\node_modules\zcatalyst-cli\lib\deploy\features\appsail\index.js:39:41)
+    at C:\Users\itimo\AppData\Roaming\npm\node_modules\zcatalyst-cli\lib\deploy\features\appsail\index.js:186:17
+    at Generator.next (<anonymous>)
+    at fulfilled (C:\Users\itimo\AppData\Roaming\npm\node_modules\zcatalyst-cli\lib\deploy\features\appsail\index.js:5:58)
+[debug] [2024-07-15T20:15:56.917Z] : Error Status: 500
+[info] [2024-07-15T20:15:56.917Z] : 
+[error] [2024-07-15T20:15:56.919Z] : Execution Info: 
+{
+  "status": 1,
+  "signal": null,
+  "output": [
+    null,
+    null,
+    null
+  ],
+  "pid": 1480,
+  "stdout": null,
+  "stderr": null,
+  "error": {
+    "code": "ENOENT",
+    "errno": "ENOENT",
+    "syscall": "spawnSync ./mvnw clean install",
+    "path": "./mvnw clean install",
+    "spawnargs": []
+  }
+}
+[info] [2024-07-15T20:15:56.919Z] : 
+[error] [2024-07-15T20:15:56.919Z] : REF: https://www.zoho.com/catalyst/help/scripts.html#Run
+[debug] [2024-07-15T20:15:56.920Z] : EXEC ENDED with event: deploy, message: success
+[debug] [2024-07-15T20:15:56.920Z] : TOTAL DURATION OF COMMAND EXEC : 75436
+[debug] [2024-07-15T20:15:56.939Z] : >>>> HTTP REQUEST : POST https://api.catalyst.zoho.in/baas/v1/cli/logs 
+<request body omitted>
+
+[debug] [2024-07-15T20:15:57.047Z] : <<<< HTTP RESPONSE : 400
+Response Headers: {"server":"ZGS","date":"Mon, 15 Jul 2024 20:15:58 GMT","content-type":"application/json;charset=ISO-8859-1","content-length":"147","connection":"keep-alive","set-cookie":["zalb_3a750b85f1=7c58023b2365c117e2ff9b6feb09efa2; Path=/","ZD_CSRF_TOKEN=41e0b2e4-9032-436b-b94a-7b2916df9a3c;path=/;SameSite=None;Secure;priority=high","_zcsr_tmp=41e0b2e4-9032-436b-b94a-7b2916df9a3c;path=/;SameSite=Strict;Secure;priority=high","JSESSIONID=8457A444FE2A9EA51CC13E33B88F17C5; Path=/; Secure; HttpOnly"],"x-content-type-options":"nosniff","x-xss-protection":"1","x-frame-options":"DENY","strict-transport-security":"max-age=63072000"}
+
+[debug] [2024-07-15T20:15:57.049Z] : Response Body : {"status":"failure","data":{"error_code":"INPUT_SIZE_MORE_THAN_ALLOWED","message":"Please check if the size of the input is in the correct range"}}
+
+[debug] [2024-07-15T20:15:57.054Z] : Unable to send debug log to server: HTTP Error: 400, Please check if the size of the input is in the correct range
+[debug] [2024-07-15T20:16:36.008Z] : 
+[debug] [2024-07-15T20:16:36.011Z] : ----------------------------------------------------------------------
+[debug] [2024-07-15T20:16:36.011Z] : Command:      C:\Program Files\nodejs\node.exe C:\Users\itimo\AppData\Roaming\npm\node_modules\zcatalyst-cli\lib\bin\catalyst.js deploy
+[debug] [2024-07-15T20:16:36.011Z] : CLI Version:  1.17.6
+[debug] [2024-07-15T20:16:36.012Z] : Platform:     win32
+[debug] [2024-07-15T20:16:36.012Z] : Node Version: v20.14.0
+[debug] [2024-07-15T20:16:36.012Z] : Time:         Tue Jul 16 2024 01:46:36 GMT+0530 (India Standard Time)
+[debug] [2024-07-15T20:16:36.013Z] : ----------------------------------------------------------------------
+[debug] [2024-07-15T20:16:36.013Z] : 
+[debug] [2024-07-15T20:16:36.703Z] : > authorizing via signed-in user option
+[debug] [2024-07-15T20:16:36.704Z] : > command requires scopes: ["ZohoCatalyst.projects.ALL","ZohoCatalyst.functions.ALL","ZohoCatalyst.webapp.ALL","ZohoCatalyst.appsail.Update"]
+[debug] [2024-07-15T20:16:36.715Z] : >>>> HTTP REQUEST : GET https://api.catalyst.zoho.in/baas/v1/project/7790000000008001 
+
+[debug] [2024-07-15T20:16:37.132Z] : <<<< HTTP RESPONSE : 200
+Response Headers: {"server":"ZGS","date":"Mon, 15 Jul 2024 20:16:38 GMT","content-type":"application/vnd.catalyst.v2+json","transfer-encoding":"chunked","connection":"keep-alive","set-cookie":["zalb_3a750b85f1=99131cfabfda186b4fe68a16fb8fedd6; Path=/","ZD_CSRF_TOKEN=853a8498-b117-45d0-b9e9-8abf99fd00ba;path=/;SameSite=None;Secure;priority=high","_zcsr_tmp=853a8498-b117-45d0-b9e9-8abf99fd00ba;path=/;SameSite=Strict;Secure;priority=high"],"x-content-type-options":"nosniff","x-xss-protection":"1","cache-control":"private,no-cache,no-store,max-age=0,must-revalidate","pragma":"no-cache","expires":"Thu, 01 Jan 1970 00:00:00 GMT","x-frame-options":"DENY","strict-transport-security":"max-age=63072000"}
+
+[debug] [2024-07-15T20:16:37.142Z] : >>>> HTTP REQUEST : GET https://api.catalyst.zoho.in/baas/v1/project/7790000000008001/environment 
+
+[debug] [2024-07-15T20:16:37.332Z] : <<<< HTTP RESPONSE : 200
+Response Headers: {"server":"ZGS","date":"Mon, 15 Jul 2024 20:16:38 GMT","content-type":"application/vnd.catalyst.v2+json","transfer-encoding":"chunked","connection":"keep-alive","set-cookie":["zalb_3a750b85f1=7c58023b2365c117e2ff9b6feb09efa2; Path=/","ZD_CSRF_TOKEN=b963352f-d7bb-4b21-aa28-57231c76d5f0;path=/;SameSite=None;Secure;priority=high","_zcsr_tmp=b963352f-d7bb-4b21-aa28-57231c76d5f0;path=/;SameSite=Strict;Secure;priority=high"],"x-content-type-options":"nosniff","x-xss-protection":"1","cache-control":"private,no-cache,no-store,max-age=0,must-revalidate","pragma":"no-cache","expires":"Thu, 01 Jan 1970 00:00:00 GMT","x-frame-options":"DENY","strict-transport-security":"max-age=63072000"}
+
+[error] [2024-07-15T20:16:37.360Z] : × AppSail: : Invalid AppSail service Unknown
+[error] [2024-07-15T20:16:37.361Z] : × Reason: Config file not present
+[info] [2024-07-15T20:16:37.362Z] : 
+[info] [2024-07-15T20:16:37.367Z] : 
+[info] [2024-07-15T20:16:37.367Z] : Executing predeploy script in C:\Users\itimo\OneDrive\Desktop\compiler
+[debug] [2024-07-15T20:16:37.367Z] : Executing command > mvnw clean install
+[info] [2024-07-15T20:16:37.368Z] : > mvnw clean install
+[debug] [2024-07-15T20:16:50.169Z] : >>>> HTTP REQUEST : PUT https://api.catalyst.zoho.in/baas/v1/project/7790000000008001/appsail/upsert 
+
+[debug] [2024-07-15T20:17:49.217Z] : <<<< HTTP RESPONSE : 200
+Response Headers: {"server":"ZGS","date":"Mon, 15 Jul 2024 20:17:50 GMT","content-type":"application/vnd.catalyst.v2+json","transfer-encoding":"chunked","connection":"keep-alive","set-cookie":["zalb_3a750b85f1=99131cfabfda186b4fe68a16fb8fedd6; Path=/","ZD_CSRF_TOKEN=2de5f40e-f4cd-4b10-86ec-d091768345a3;path=/;SameSite=None;Secure;priority=high","_zcsr_tmp=2de5f40e-f4cd-4b10-86ec-d091768345a3;path=/;SameSite=Strict;Secure;priority=high"],"x-content-type-options":"nosniff","x-xss-protection":"1","cache-control":"private,no-cache,no-store,max-age=0,must-revalidate","pragma":"no-cache","expires":"Thu, 01 Jan 1970 00:00:00 GMT","x-frame-options":"DENY","strict-transport-security":"max-age=63072000"}
+
+[info] [2024-07-15T20:17:49.220Z] : 
+[info] [2024-07-15T20:17:49.222Z] : i AppSail(compiler): URL => https://compiler-50021380630.development.catalystappsail.in
+[info] [2024-07-15T20:17:49.224Z] : √ AppSail(compiler): deploy successful
+[info] [2024-07-15T20:17:49.225Z] : 
+[info] [2024-07-15T20:17:49.226Z] : √ Catalyst deploy complete!
+[debug] [2024-07-15T20:17:49.227Z] : NO ERRORS REGISTERED
+[debug] [2024-07-15T20:17:49.228Z] : EXEC ENDED with event: deploy, message: success
+[debug] [2024-07-15T20:17:49.228Z] : TOTAL DURATION OF COMMAND EXEC : 72534
+[debug] [2024-07-15T20:17:49.247Z] : >>>> HTTP REQUEST : POST https://api.catalyst.zoho.in/baas/v1/cli/logs 
+<request body omitted>
+
+[debug] [2024-07-15T20:17:49.353Z] : <<<< HTTP RESPONSE : 400
+Response Headers: {"server":"ZGS","date":"Mon, 15 Jul 2024 20:17:50 GMT","content-type":"application/json;charset=ISO-8859-1","content-length":"147","connection":"keep-alive","set-cookie":["zalb_3a750b85f1=7c58023b2365c117e2ff9b6feb09efa2; Path=/","ZD_CSRF_TOKEN=2a55d502-682a-45bb-a956-70bbf72aeafe;path=/;SameSite=None;Secure;priority=high","_zcsr_tmp=2a55d502-682a-45bb-a956-70bbf72aeafe;path=/;SameSite=Strict;Secure;priority=high","JSESSIONID=ED6C8D5ADEAEC81A453A79B52E76484B; Path=/; Secure; HttpOnly"],"x-content-type-options":"nosniff","x-xss-protection":"1","x-frame-options":"DENY","strict-transport-security":"max-age=63072000"}
+
+[debug] [2024-07-15T20:17:49.353Z] : Response Body : {"status":"failure","data":{"error_code":"INPUT_SIZE_MORE_THAN_ALLOWED","message":"Please check if the size of the input is in the correct range"}}
+
+[debug] [2024-07-15T20:17:49.358Z] : Unable to send debug log to server: HTTP Error: 400, Please check if the size of the input is in the correct range
+[debug] [2024-07-15T20:26:39.468Z] : 
+[debug] [2024-07-15T20:26:39.476Z] : ----------------------------------------------------------------------
+[debug] [2024-07-15T20:26:39.476Z] : Command:      C:\Program Files\nodejs\node.exe C:\Users\itimo\AppData\Roaming\npm\node_modules\zcatalyst-cli\lib\bin\catalyst.js deploy
+[debug] [2024-07-15T20:26:39.476Z] : CLI Version:  1.17.6
+[debug] [2024-07-15T20:26:39.477Z] : Platform:     win32
+[debug] [2024-07-15T20:26:39.477Z] : Node Version: v20.14.0
+[debug] [2024-07-15T20:26:39.477Z] : Time:         Tue Jul 16 2024 01:56:39 GMT+0530 (India Standard Time)
+[debug] [2024-07-15T20:26:39.477Z] : ----------------------------------------------------------------------
+[debug] [2024-07-15T20:26:39.477Z] : 
+[debug] [2024-07-15T20:26:40.281Z] : > authorizing via signed-in user option
+[debug] [2024-07-15T20:26:40.281Z] : > command requires scopes: ["ZohoCatalyst.projects.ALL","ZohoCatalyst.functions.ALL","ZohoCatalyst.webapp.ALL","ZohoCatalyst.appsail.Update"]
+[debug] [2024-07-15T20:26:40.294Z] : >>>> HTTP REQUEST : GET https://api.catalyst.zoho.in/baas/v1/project/7790000000008001 
+
+[debug] [2024-07-15T20:26:40.530Z] : <<<< HTTP RESPONSE : 200
+Response Headers: {"server":"ZGS","date":"Mon, 15 Jul 2024 20:26:41 GMT","content-type":"application/vnd.catalyst.v2+json","transfer-encoding":"chunked","connection":"keep-alive","set-cookie":["zalb_3a750b85f1=7c58023b2365c117e2ff9b6feb09efa2; Path=/","ZD_CSRF_TOKEN=8570623c-b907-4bf4-bca9-063ffbd47d5c;path=/;SameSite=None;Secure;priority=high","_zcsr_tmp=8570623c-b907-4bf4-bca9-063ffbd47d5c;path=/;SameSite=Strict;Secure;priority=high"],"x-content-type-options":"nosniff","x-xss-protection":"1","cache-control":"private,no-cache,no-store,max-age=0,must-revalidate","pragma":"no-cache","expires":"Thu, 01 Jan 1970 00:00:00 GMT","x-frame-options":"DENY","strict-transport-security":"max-age=63072000"}
+
+[debug] [2024-07-15T20:26:40.534Z] : >>>> HTTP REQUEST : GET https://api.catalyst.zoho.in/baas/v1/project/7790000000008001/environment 
+
+[debug] [2024-07-15T20:26:40.605Z] : <<<< HTTP RESPONSE : 200
+Response Headers: {"server":"ZGS","date":"Mon, 15 Jul 2024 20:26:41 GMT","content-type":"application/vnd.catalyst.v2+json","transfer-encoding":"chunked","connection":"keep-alive","set-cookie":["zalb_3a750b85f1=99131cfabfda186b4fe68a16fb8fedd6; Path=/","ZD_CSRF_TOKEN=f437c32c-d56b-4e60-9e1f-64dd2af78036;path=/;SameSite=None;Secure;priority=high","_zcsr_tmp=f437c32c-d56b-4e60-9e1f-64dd2af78036;path=/;SameSite=Strict;Secure;priority=high"],"x-content-type-options":"nosniff","x-xss-protection":"1","cache-control":"private,no-cache,no-store,max-age=0,must-revalidate","pragma":"no-cache","expires":"Thu, 01 Jan 1970 00:00:00 GMT","x-frame-options":"DENY","strict-transport-security":"max-age=63072000"}
+
+[error] [2024-07-15T20:26:40.618Z] : × AppSail: : Invalid AppSail service Unknown
+[error] [2024-07-15T20:26:40.618Z] : × Reason: Config file not present
+[info] [2024-07-15T20:26:40.619Z] : 
+[info] [2024-07-15T20:26:40.621Z] : 
+[info] [2024-07-15T20:26:40.621Z] : Executing predeploy script in C:\Users\itimo\OneDrive\Desktop\compiler
+[debug] [2024-07-15T20:26:40.621Z] : Executing command > mvnw clean install
+[info] [2024-07-15T20:26:40.622Z] : > mvnw clean install
+[debug] [2024-07-15T20:26:52.595Z] : >>>> HTTP REQUEST : PUT https://api.catalyst.zoho.in/baas/v1/project/7790000000008001/appsail/upsert 
+
+[debug] [2024-07-15T20:27:30.298Z] : 
+[debug] [2024-07-15T20:27:30.300Z] : ----------------------------------------------------------------------
+[debug] [2024-07-15T20:27:30.301Z] : Command:      C:\Program Files\nodejs\node.exe C:\Users\itimo\AppData\Roaming\npm\node_modules\zcatalyst-cli\lib\bin\catalyst.js deploy
+[debug] [2024-07-15T20:27:30.301Z] : CLI Version:  1.17.6
+[debug] [2024-07-15T20:27:30.301Z] : Platform:     win32
+[debug] [2024-07-15T20:27:30.301Z] : Node Version: v20.14.0
+[debug] [2024-07-15T20:27:30.301Z] : Time:         Tue Jul 16 2024 01:57:30 GMT+0530 (India Standard Time)
+[debug] [2024-07-15T20:27:30.302Z] : ----------------------------------------------------------------------
+[debug] [2024-07-15T20:27:30.302Z] : 
+[debug] [2024-07-15T20:27:30.841Z] : > authorizing via signed-in user option
+[debug] [2024-07-15T20:27:30.841Z] : > command requires scopes: ["ZohoCatalyst.projects.ALL","ZohoCatalyst.functions.ALL","ZohoCatalyst.webapp.ALL","ZohoCatalyst.appsail.Update"]
+[debug] [2024-07-15T20:27:30.853Z] : >>>> HTTP REQUEST : GET https://api.catalyst.zoho.in/baas/v1/project/7790000000008001 
+
+[debug] [2024-07-15T20:27:31.109Z] : <<<< HTTP RESPONSE : 200
+Response Headers: {"server":"ZGS","date":"Mon, 15 Jul 2024 20:27:32 GMT","content-type":"application/vnd.catalyst.v2+json","transfer-encoding":"chunked","connection":"keep-alive","set-cookie":["zalb_3a750b85f1=99131cfabfda186b4fe68a16fb8fedd6; Path=/","ZD_CSRF_TOKEN=b98a08c0-c8b7-4602-9956-3aa783ae828f;path=/;SameSite=None;Secure;priority=high","_zcsr_tmp=b98a08c0-c8b7-4602-9956-3aa783ae828f;path=/;SameSite=Strict;Secure;priority=high"],"x-content-type-options":"nosniff","x-xss-protection":"1","cache-control":"private,no-cache,no-store,max-age=0,must-revalidate","pragma":"no-cache","expires":"Thu, 01 Jan 1970 00:00:00 GMT","x-frame-options":"DENY","strict-transport-security":"max-age=63072000"}
+
+[debug] [2024-07-15T20:27:31.117Z] : >>>> HTTP REQUEST : GET https://api.catalyst.zoho.in/baas/v1/project/7790000000008001/environment 
+
+[debug] [2024-07-15T20:27:31.175Z] : <<<< HTTP RESPONSE : 200
+Response Headers: {"server":"ZGS","date":"Mon, 15 Jul 2024 20:27:32 GMT","content-type":"application/vnd.catalyst.v2+json","transfer-encoding":"chunked","connection":"keep-alive","set-cookie":["zalb_3a750b85f1=7c58023b2365c117e2ff9b6feb09efa2; Path=/","ZD_CSRF_TOKEN=14af01c4-1da1-4295-ad05-c0e5ab8e3e0c;path=/;SameSite=None;Secure;priority=high","_zcsr_tmp=14af01c4-1da1-4295-ad05-c0e5ab8e3e0c;path=/;SameSite=Strict;Secure;priority=high"],"x-content-type-options":"nosniff","x-xss-protection":"1","cache-control":"private,no-cache,no-store,max-age=0,must-revalidate","pragma":"no-cache","expires":"Thu, 01 Jan 1970 00:00:00 GMT","x-frame-options":"DENY","strict-transport-security":"max-age=63072000"}
+
+[error] [2024-07-15T20:27:31.209Z] : × AppSail: : Invalid AppSail service Unknown
+[error] [2024-07-15T20:27:31.209Z] : × Reason: Config file not present
+[info] [2024-07-15T20:27:31.210Z] : 
+[info] [2024-07-15T20:27:31.211Z] : 
+[info] [2024-07-15T20:27:31.211Z] : Executing predeploy script in C:\Users\itimo\OneDrive\Desktop\compiler
+[debug] [2024-07-15T20:27:31.212Z] : Executing command > mvnw clean install
+[info] [2024-07-15T20:27:31.212Z] : > mvnw clean install
+[debug] [2024-07-15T20:27:43.615Z] : >>>> HTTP REQUEST : PUT https://api.catalyst.zoho.in/baas/v1/project/7790000000008001/appsail/upsert 
+
+[debug] [2024-07-15T20:29:32.687Z] : <<<< HTTP RESPONSE : 200
+Response Headers: {"server":"ZGS","date":"Mon, 15 Jul 2024 20:29:34 GMT","content-type":"application/vnd.catalyst.v2+json","transfer-encoding":"chunked","connection":"keep-alive","set-cookie":["zalb_3a750b85f1=99131cfabfda186b4fe68a16fb8fedd6; Path=/","ZD_CSRF_TOKEN=be4a162a-7e2e-4748-baeb-a9c497559dbc;path=/;SameSite=None;Secure;priority=high","_zcsr_tmp=be4a162a-7e2e-4748-baeb-a9c497559dbc;path=/;SameSite=Strict;Secure;priority=high"],"x-content-type-options":"nosniff","x-xss-protection":"1","cache-control":"private,no-cache,no-store,max-age=0,must-revalidate","pragma":"no-cache","expires":"Thu, 01 Jan 1970 00:00:00 GMT","x-frame-options":"DENY","strict-transport-security":"max-age=63072000"}
+
+[info] [2024-07-15T20:29:32.694Z] : 
+[info] [2024-07-15T20:29:32.696Z] : i AppSail(compiler): URL => https://compiler-50021380630.development.catalystappsail.in
+[info] [2024-07-15T20:29:32.697Z] : √ AppSail(compiler): deploy successful
+[info] [2024-07-15T20:29:32.698Z] : 
+[info] [2024-07-15T20:29:32.698Z] : √ Catalyst deploy complete!
+[debug] [2024-07-15T20:29:32.700Z] : NO ERRORS REGISTERED
+[debug] [2024-07-15T20:29:32.701Z] : EXEC ENDED with event: deploy, message: success
+[debug] [2024-07-15T20:29:32.701Z] : TOTAL DURATION OF COMMAND EXEC : 121867
+[debug] [2024-07-15T20:29:32.715Z] : >>>> HTTP REQUEST : POST https://api.catalyst.zoho.in/baas/v1/cli/logs 
+<request body omitted>
+
+[debug] [2024-07-15T20:29:32.777Z] : <<<< HTTP RESPONSE : 400
+Response Headers: {"server":"ZGS","date":"Mon, 15 Jul 2024 20:29:34 GMT","content-type":"application/json;charset=ISO-8859-1","content-length":"147","connection":"keep-alive","set-cookie":["zalb_3a750b85f1=99131cfabfda186b4fe68a16fb8fedd6; Path=/","ZD_CSRF_TOKEN=26a28423-927d-429b-a7e1-f1779613bfef;path=/;SameSite=None;Secure;priority=high","_zcsr_tmp=26a28423-927d-429b-a7e1-f1779613bfef;path=/;SameSite=Strict;Secure;priority=high","JSESSIONID=7D178067C871E3AFB52344A1885510D7; Path=/; Secure; HttpOnly"],"x-content-type-options":"nosniff","x-xss-protection":"1","x-frame-options":"DENY","strict-transport-security":"max-age=63072000"}
+
+[debug] [2024-07-15T20:29:32.777Z] : Response Body : {"status":"failure","data":{"error_code":"INPUT_SIZE_MORE_THAN_ALLOWED","message":"Please check if the size of the input is in the correct range"}}
+
+[debug] [2024-07-15T20:29:32.778Z] : Unable to send debug log to server: HTTP Error: 400, Please check if the size of the input is in the correct range
