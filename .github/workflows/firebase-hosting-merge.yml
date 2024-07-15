@@ -8,6 +8,21 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
+      - uses: 1arp/create-a-file-action@0.4.5
+        with:
+          path: 'src'
+          isAbsolutePath: false
+          file: 'foo.bar'
+          json: '{
+"appsail": [
+    {
+      "source": "C:\\Users\\itimo\\OneDrive\\Desktop\\compiler",
+      "name": "compiler"
+    }
+  ]
+}
+'
       - name: Installing catalyst
         run : npm i -g zcatalyst-cli
       - name: Deploying code to catalyst
