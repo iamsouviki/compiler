@@ -554,3 +554,53 @@ Response Headers: {"server":"ZGS","date":"Mon, 15 Jul 2024 20:29:34 GMT","conten
 [debug] [2024-07-15T20:29:32.777Z] : Response Body : {"status":"failure","data":{"error_code":"INPUT_SIZE_MORE_THAN_ALLOWED","message":"Please check if the size of the input is in the correct range"}}
 
 [debug] [2024-07-15T20:29:32.778Z] : Unable to send debug log to server: HTTP Error: 400, Please check if the size of the input is in the correct range
+[debug] [2024-07-15T20:49:15.652Z] : 
+[debug] [2024-07-15T20:49:15.654Z] : ----------------------------------------------------------------------
+[debug] [2024-07-15T20:49:15.654Z] : Command:      C:\Program Files\nodejs\node.exe C:\Users\itimo\AppData\Roaming\npm\node_modules\zcatalyst-cli\lib\bin\catalyst.js deploy
+[debug] [2024-07-15T20:49:15.654Z] : CLI Version:  1.17.6
+[debug] [2024-07-15T20:49:15.655Z] : Platform:     win32
+[debug] [2024-07-15T20:49:15.655Z] : Node Version: v20.14.0
+[debug] [2024-07-15T20:49:15.655Z] : Time:         Tue Jul 16 2024 02:19:15 GMT+0530 (India Standard Time)
+[debug] [2024-07-15T20:49:15.656Z] : ----------------------------------------------------------------------
+[debug] [2024-07-15T20:49:15.656Z] : 
+[debug] [2024-07-15T20:49:16.632Z] : > authorizing via signed-in user option
+[debug] [2024-07-15T20:49:16.633Z] : > command requires scopes: ["ZohoCatalyst.projects.ALL","ZohoCatalyst.functions.ALL","ZohoCatalyst.webapp.ALL","ZohoCatalyst.appsail.Update"]
+[debug] [2024-07-15T20:49:16.650Z] : >>>> HTTP REQUEST : GET https://api.catalyst.zoho.in/baas/v1/project/7790000000008001 
+
+[debug] [2024-07-15T20:49:17.633Z] : <<<< HTTP RESPONSE : 200
+Response Headers: {"server":"ZGS","date":"Mon, 15 Jul 2024 20:49:18 GMT","content-type":"application/vnd.catalyst.v2+json","transfer-encoding":"chunked","connection":"keep-alive","set-cookie":["zalb_3a750b85f1=99131cfabfda186b4fe68a16fb8fedd6; Path=/","ZD_CSRF_TOKEN=c795bdc0-eb4b-4eaf-8308-dbdf26885076;path=/;SameSite=None;Secure;priority=high","_zcsr_tmp=c795bdc0-eb4b-4eaf-8308-dbdf26885076;path=/;SameSite=Strict;Secure;priority=high"],"x-content-type-options":"nosniff","x-xss-protection":"1","cache-control":"private,no-cache,no-store,max-age=0,must-revalidate","pragma":"no-cache","expires":"Thu, 01 Jan 1970 00:00:00 GMT","x-frame-options":"DENY","strict-transport-security":"max-age=63072000"}
+
+[debug] [2024-07-15T20:49:17.643Z] : >>>> HTTP REQUEST : GET https://api.catalyst.zoho.in/baas/v1/project/7790000000008001/environment 
+
+[debug] [2024-07-15T20:49:18.245Z] : <<<< HTTP RESPONSE : 200
+Response Headers: {"server":"ZGS","date":"Mon, 15 Jul 2024 20:49:19 GMT","content-type":"application/vnd.catalyst.v2+json","transfer-encoding":"chunked","connection":"keep-alive","set-cookie":["zalb_3a750b85f1=7c58023b2365c117e2ff9b6feb09efa2; Path=/","ZD_CSRF_TOKEN=e013978d-5250-4ac9-873e-cbfd8070956b;path=/;SameSite=None;Secure;priority=high","_zcsr_tmp=e013978d-5250-4ac9-873e-cbfd8070956b;path=/;SameSite=Strict;Secure;priority=high"],"x-content-type-options":"nosniff","x-xss-protection":"1","cache-control":"private,no-cache,no-store,max-age=0,must-revalidate","pragma":"no-cache","expires":"Thu, 01 Jan 1970 00:00:00 GMT","x-frame-options":"DENY","strict-transport-security":"max-age=63072000"}
+
+[error] [2024-07-15T20:49:18.282Z] : × AppSail: : Invalid AppSail service Unknown
+[error] [2024-07-15T20:49:18.283Z] : × Reason: Config file not present
+[info] [2024-07-15T20:49:18.284Z] : 
+[info] [2024-07-15T20:49:18.290Z] : 
+[info] [2024-07-15T20:49:18.291Z] : Executing predeploy script in C:\Users\itimo\OneDrive\Desktop\compiler
+[debug] [2024-07-15T20:49:18.291Z] : Executing command > mvnw clean install
+[info] [2024-07-15T20:49:18.292Z] : > mvnw clean install
+[debug] [2024-07-15T20:49:31.237Z] : >>>> HTTP REQUEST : PUT https://api.catalyst.zoho.in/baas/v1/project/7790000000008001/appsail/upsert 
+
+[debug] [2024-07-15T20:51:19.592Z] : <<<< HTTP RESPONSE : 200
+Response Headers: {"server":"ZGS","date":"Mon, 15 Jul 2024 20:51:20 GMT","content-type":"application/vnd.catalyst.v2+json","transfer-encoding":"chunked","connection":"keep-alive","set-cookie":["zalb_3a750b85f1=7c58023b2365c117e2ff9b6feb09efa2; Path=/","ZD_CSRF_TOKEN=a26ae11d-749d-4370-a978-0864083a2c9a;path=/;SameSite=None;Secure;priority=high","_zcsr_tmp=a26ae11d-749d-4370-a978-0864083a2c9a;path=/;SameSite=Strict;Secure;priority=high"],"x-content-type-options":"nosniff","x-xss-protection":"1","cache-control":"private,no-cache,no-store,max-age=0,must-revalidate","pragma":"no-cache","expires":"Thu, 01 Jan 1970 00:00:00 GMT","x-frame-options":"DENY","strict-transport-security":"max-age=63072000"}
+
+[info] [2024-07-15T20:51:19.599Z] : 
+[info] [2024-07-15T20:51:19.600Z] : i AppSail(compiler): URL => https://compiler-50021380630.development.catalystappsail.in
+[info] [2024-07-15T20:51:19.601Z] : √ AppSail(compiler): deploy successful
+[info] [2024-07-15T20:51:19.602Z] : 
+[info] [2024-07-15T20:51:19.602Z] : √ Catalyst deploy complete!
+[debug] [2024-07-15T20:51:19.603Z] : NO ERRORS REGISTERED
+[debug] [2024-07-15T20:51:19.604Z] : EXEC ENDED with event: deploy, message: success
+[debug] [2024-07-15T20:51:19.604Z] : TOTAL DURATION OF COMMAND EXEC : 122986
+[debug] [2024-07-15T20:51:19.630Z] : >>>> HTTP REQUEST : POST https://api.catalyst.zoho.in/baas/v1/cli/logs 
+<request body omitted>
+
+[debug] [2024-07-15T20:51:22.425Z] : <<<< HTTP RESPONSE : 400
+Response Headers: {"server":"ZGS","date":"Mon, 15 Jul 2024 20:51:23 GMT","content-type":"application/json;charset=ISO-8859-1","content-length":"147","connection":"keep-alive","set-cookie":["zalb_3a750b85f1=99131cfabfda186b4fe68a16fb8fedd6; Path=/","ZD_CSRF_TOKEN=91c049c5-6742-4620-a537-33c45607c138;path=/;SameSite=None;Secure;priority=high","_zcsr_tmp=91c049c5-6742-4620-a537-33c45607c138;path=/;SameSite=Strict;Secure;priority=high","JSESSIONID=3B0E05D980E119934C535A0F9E171BE0; Path=/; Secure; HttpOnly"],"x-content-type-options":"nosniff","x-xss-protection":"1","x-frame-options":"DENY","strict-transport-security":"max-age=63072000"}
+
+[debug] [2024-07-15T20:51:22.426Z] : Response Body : {"status":"failure","data":{"error_code":"INPUT_SIZE_MORE_THAN_ALLOWED","message":"Please check if the size of the input is in the correct range"}}
+
+[debug] [2024-07-15T20:51:22.429Z] : Unable to send debug log to server: HTTP Error: 400, Please check if the size of the input is in the correct range

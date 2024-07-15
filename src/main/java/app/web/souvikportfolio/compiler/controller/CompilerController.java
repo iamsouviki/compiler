@@ -22,7 +22,6 @@ public class CompilerController {
     CompileServices compileServices;
 
     @PostMapping(value = "/compile")
-    @CrossOrigin(origins = "*")
     public ResponseEntity<String> compileCode(@RequestBody CompilerModel compilerModel) throws IOException {
         try{
             String output = compileServices.compileCode(compilerModel);
@@ -33,7 +32,6 @@ public class CompilerController {
     }
 
     @PostMapping(value = "/compile-and-test")
-    @CrossOrigin(origins = "*")
     public ResponseEntity<String> compileAndTestCode(@RequestBody CompileandTest compileandTest) throws IOException {
         CompilerModel compilerModel = new CompilerModel();
             compilerModel.setLanguage(compileandTest.getLanguage());
