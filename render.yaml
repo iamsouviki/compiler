@@ -1,0 +1,12 @@
+# Exported from Render on 2024-07-15T16:01:08Z
+services:
+- type: web
+  name: compiler
+  runtime: docker
+  repo: https://github.com/iamsouviki/compiler
+  plan: free
+  region: oregon
+  healthCheckPath: /health
+  dockerContext: .
+  dockerfilePath: ./Dockerfile
+version: "1"

@@ -11,5 +11,5 @@ RUN mvn clean package
 FROM openjdk:24-slim
 COPY --from=build /target/compiler-0.0.1-SNAPSHOT.jar compiler.jar
 # ENV PORT=8080
-EXPOSE 8080
+EXPOSE 8090
 ENTRYPOINT ["java","-jar","compiler.jar"]
