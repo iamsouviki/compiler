@@ -13,7 +13,7 @@ jobs:
       - uses: actions/checkout@v4
       - run: sudo apt-get update && sudo apt install openjdk-8-jdk && export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 && sudo apt
           install maven -y && sudo apt install build-essential &&
-          sudo apt install python3 && mvn spring-boot:run
+          sudo apt install python3 && sudo mvn spring-boot:run
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
