@@ -11,13 +11,13 @@ jobs:
       - uses: actions/checkout@v2
       - uses: 1arp/create-a-file-action@0.4.5
         with:
-          path: 'src'
+          path: '\home\runner\work\compiler\compiler'
           isAbsolutePath: false
-          file: 'foo.bar'
+          file: 'catalyst.json'
           json: '{
 "appsail": [
     {
-      "source": "C:\\Users\\itimo\\OneDrive\\Desktop\\compiler",
+      "source": "\home\runner\work\compiler\compiler",
       "name": "compiler"
     }
   ]
