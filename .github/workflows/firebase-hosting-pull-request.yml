@@ -25,4 +25,4 @@ jobs:
       - name: Installing catalyst
         run : npm i -g zcatalyst-cli
       - name: Deploying code to catalyst
-        run: catalyst deploy --project ${{ secrets.CATALYST_PROJECT_NAME}} --org ${{ secrets.CATALYST_ORG}} --token ${{ secrets.CATALYST_TOKEN}}
+        run: catalyst deploy --project ${{ secrets.compiler}} --org ${{ secrets.7790000000008001}} --token ${{ secrets. m_1004.54e25bcad6001bacd4910fcfa34cae3d.e04be7f111dc28fd179a90504d03ce12}}
