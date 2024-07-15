@@ -1,20 +1,20 @@
 {
   "defaults": {
-    "project": 1,
+    "project": 2,
     "env": 1
   },
   "actives": {
-    "project": 1,
+    "project": 2,
     "env": 1
   },
   "projects": [
     {
-      "idx": 1,
-      "id": "7790000000006022",
-      "name": "Project-Rainfall",
+      "idx": 2,
+      "id": "7790000000008001",
+      "name": "compiler",
       "domain": {
-        "id": "50021380376",
-        "name": "project-rainfall-60030971104.development"
+        "id": "50021380630",
+        "name": "compiler-60030971104.development"
       },
       "timezone": "Asia/Kolkata",
       "env": [
@@ -23,12 +23,6 @@
           "id": "60030971104",
           "name": "Development",
           "type": 3
-        },
-        {
-          "idx": 2,
-          "id": "50021380377",
-          "name": "Production",
-          "type": 1
         }
       ]
     }
