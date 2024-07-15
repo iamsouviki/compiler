@@ -8,21 +8,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - name: Loading Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '18'
-      - name: Loading Java17
-        uses: actions/setup-java@v4.0.0
-        with:
-          java-version: '17'
-          distribution: 'oracle'
-      - name: Setup Python3.9
-        uses: actions/setup-python@v5.0.0
-        with:
-          python-version: '3.9.15'
       - name: Installing catalyst
         run : npm i -g zcatalyst-cli
       - name: Deploying code to catalyst
-        run: catalyst deploy --project compiler --org 7790000000008001 --token m_1004.54e25bcad6001bacd4910fcfa34cae3d.e04be7f111dc28fd179a90504d03ce12
+	    run: catalyst deploy --project ${{secrets.CATALYST_PROJECT_NAME}} --org ${{secrets.CATALYST_ORG}} --token ${{ secrets.CATALYST_TOKEN}}
