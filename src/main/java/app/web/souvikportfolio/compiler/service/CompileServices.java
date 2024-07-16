@@ -65,7 +65,7 @@ public class CompileServices {
             output = new String(runProcess.getInputStream().readAllBytes());
 
         } catch (IOException | InterruptedException e) {
-            return "Error during compilation or execution "+e.getMessage();
+            return " Error during compilation or execution "+e.getMessage();
         }
         tempFile.deleteOnExit();
 
