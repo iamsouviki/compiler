@@ -1,0 +1,44 @@
+openapi: 3.0.0
+info:
+  title: compiler-api
+  version: 1.0.0
+servers:
+  - url: http://localhost:8080
+paths:
+  /compile:
+    post:
+      tags:
+        - default
+      summary: create
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                language: java,
+                codeText: class HelloWorld {public static void main(String[] args) {System.out.print(\"Try1\");}}
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    /compile-and-test:
+      post:
+        tags:
+          - default
+        summary: create
+        requestBody:
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  language: java,
+                  codeText: class HelloWorld {public static void main(String[] args) {System.out.print(\"Try1\");}}
+                  expectedOutput: Try
+        responses:
+          '200':
+            description: Successful response
+            content:
+              application/json: { }
