@@ -3,7 +3,7 @@ info:
   title: reading-list-api
   version: 1.0.0
 servers:
-  - url: http://localhost:8080
+  - url: http://localhost:9000
 paths:
   /books:
     post:
