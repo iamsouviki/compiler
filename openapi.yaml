@@ -1,46 +1,25 @@
 openapi: 3.0.0
 info:
-  title: compiler-api
+  title: compileApi
   version: 1.0.0
 servers:
-  - url: http://localhost:8080
+  - url: http://localhost:9000
 paths:
   /compile:
-    x-wso2-disable-security: true
     post:
       tags:
         - default
-      summary: create
+      summary: compile a code
       requestBody:
         content:
           application/json:
             schema:
               type: object
               example:
-                language: java,
-                codeText: class HelloWorld {public static void main(String[] args) {System.out.print(\"Try1\");}}
+                language: python
+                codeText: print('helo')
       responses:
-        default:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json: {}
-    /compile-and-test:
-      post:
-        tags:
-          - default
-        summary: create
-        requestBody:
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  language: java,
-                  codeText: class HelloWorld {public static void main(String[] args) {System.out.print(\"Try1\");}}
-                  expectedOutput: Try
-        responses:
-          '200':
-            description: Successful response
-            content:
-              application/json: { }
