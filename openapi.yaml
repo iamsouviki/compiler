@@ -19,6 +19,10 @@ paths:
                 language: python
                 codeText: print('helo')
       responses:
+        default:
+          description: Successful response
+          content:
+            application/json: { }
         "200":
           description: Successful response
           content:
